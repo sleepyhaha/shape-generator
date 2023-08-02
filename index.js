@@ -4,23 +4,27 @@ const generateLogo = require("./lib/logoGen");
 const colourList = require("./lib/colour.json");
 const { error } = require("console");
 
+// turns JSON object into an array of arrays
 const colourArray = Object.entries(colourList);
 
 const questions = [
+  // validates that logo is not more than 3 characters and not less than 0
   {
     type: "input",
     message: "Please enter your logo text (no more than 3 characters plz)",
     name: "logoText",
     validate: (input) => {
-      if (input.length <= 3 && input.length > 0) {
+      if (input.length <= 3) {
         return true;
       } else {
         console.log(`
-        Text must be between 0 - 3 characters.`);
+        Text must be less than 3 characters.`);
         return false;
       }
     },
   },
+
+  // validation logic flattens array so that it can be searched with includes() to check if user input includes listed colour name or hex code. if true, then adds colour/hex code to render() function. also changes input to lower case to match values in array.. Array is a non-exhaustive list but includes most of the usual suspects
   {
     type: "input",
     message: "Please enter the text colour",
@@ -59,6 +63,7 @@ const questions = [
   },
 ];
 
+// code below copied and rewritten from previous project (README generator)
 const writeSVG = (fileName, data) => {
   fs.writeFile(fileName, data, (err) => {
     if (err) {
@@ -66,6 +71,8 @@ const writeSVG = (fileName, data) => {
     }
   });
 };
+
+// initialization function running async. Runs prompt and then once thats finished, puts the answers into the template and write to designated path using writeSVG function.
 
 const generateSVG = async () => {
   try {
