@@ -3,6 +3,7 @@ const fs = require("fs");
 const generateLogo = require("./lib/logoGen");
 const colourList = require("./lib/colour.json");
 const { error } = require("console");
+
 const colourArray = Object.entries(colourList);
 
 const questions = [
@@ -16,7 +17,7 @@ const questions = [
       } else {
         console.log(`
         Text must be between 0 - 3 characters.`);
-        return false ;
+        return false;
       }
     },
   },
@@ -46,7 +47,7 @@ const questions = [
       } else {
         console.log(`
         Please enter a different colour`);
-        return false clear;
+        return false;
       }
     },
   },
