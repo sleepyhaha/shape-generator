@@ -25,7 +25,7 @@ test("Triangle", () => {
   expect(triangle.render()).toEqual(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
   <polygon points="150,25 275,175 25,175" fill="red" stroke="black" stroke-width="4"/>
-  <text x="150" y="135" text-anchor="middle" dominant-baseline="middle" font-size="56" font-weight="bold" fill="skyblue">WTF}</text>
+  <text x="150" y="135" text-anchor="middle" dominant-baseline="middle" font-size="56" font-weight="bold" fill="skyblue">WTF</text>
 </svg>`
   );
 });

@@ -1,4 +1,4 @@
-const colourList = require("./lib/colour.json");
+const colourList = require("../lib/colour.json");
 
 const colourArray = Object.entries(colourList);
 
