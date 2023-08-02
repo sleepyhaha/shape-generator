@@ -42,8 +42,13 @@ const questions = [
   },
   {
     type: "input",
+    message: "Please enter the text colour",
+    name: "textColour",
+  },
+  {
+    type: "input",
     message: "Please enter the background colour",
-    name: "colour",
+    name: "logoColour",
   },
   {
     type: "list",
