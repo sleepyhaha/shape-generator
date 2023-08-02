@@ -39,7 +39,7 @@ Or if you have any questions, contact me at not-today@maybenexttime.com.
 
 ## <a name="credits"></a> Credits
 
-N/A
+Colour JSON file taken from https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
 
 ## <a name="license"></a> License
 
