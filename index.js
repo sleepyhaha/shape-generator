@@ -14,8 +14,9 @@ const questions = [
       if (input.length <= 3 && input.length > 0) {
         return true;
       } else {
-        console.log("Text must be between 0 - 3 characters.");
-        return false;
+        console.log(`
+        Text must be between 0 - 3 characters.`);
+        return false ;
       }
     },
   },
@@ -28,7 +29,8 @@ const questions = [
       if (colourArray.flat().includes(inputLower) === true) {
         return true;
       } else {
-        console.log("Please enter a different colour");
+        console.log(`
+        Please enter a different colour`);
         return false;
       }
     },
@@ -42,8 +44,9 @@ const questions = [
       if (colourArray.flat().includes(inputLower) === true) {
         return true;
       } else {
-        console.log("Please enter a different colour");
-        return false;
+        console.log(`
+        Please enter a different colour`);
+        return false clear;
       }
     },
   },
