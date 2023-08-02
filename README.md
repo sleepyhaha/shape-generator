@@ -4,7 +4,9 @@
 
 ## Description
 
-This app generates an SVG logo based off a few user inputs to create a free to use (!!!!!) logo for whatever you need. Simply run the app in your preferred CLI , follow the prompts and watch a (pretty good) logo appear .
+This app generates an SVG logo based off a few user inputs to create a free to use (!!!!!) logo for whatever you need. Simply run the app in your preferred CLI , follow the prompts and watch a (pretty good) logo appear.
+
+Video link https://watch.screencastify.com/v/OupFPhYQogNPSz8am40I
 
 ## Table of Contents
 
