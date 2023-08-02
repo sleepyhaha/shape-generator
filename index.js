@@ -33,3 +33,11 @@ class LogoText {
     this.y = y;
   }
 }
+
+const questions = [
+  {
+    type: "input",
+    message: "Please enter your logo text (no more than 3 characters plz)",
+    name: "logotext",
+  },
+];
