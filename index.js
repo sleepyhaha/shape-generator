@@ -1,4 +1,9 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateLogo = require("./lib/logoGen");
 const colourList = require("./lib/colour.json");
+const { error } = require("console");
+
 const colourArray = Object.entries(colourList);
 
 const questions = [
@@ -10,7 +15,8 @@ const questions = [
       if (input.length <= 3 && input.length > 0) {
         return true;
       } else {
-        console.log("Text must be between 0 - 3 characters.");
+        console.log(`
+        Text must be between 0 - 3 characters.`);
         return false;
       }
     },
@@ -22,9 +28,10 @@ const questions = [
     validate: (input) => {
       let inputLower = input.toLowerCase();
       if (colourArray.flat().includes(inputLower) === true) {
-        return;
+        return true;
       } else {
-        console.log("Please enter a different colour");
+        console.log(`
+        Please enter a different colour`);
         return false;
       }
     },
@@ -36,9 +43,10 @@ const questions = [
     validate: (input) => {
       let inputLower = input.toLowerCase();
       if (colourArray.flat().includes(inputLower) === true) {
-        return;
+        return true;
       } else {
-        console.log("Please enter a different colour");
+        console.log(`
+        Please enter a different colour`);
         return false;
       }
     },
@@ -50,3 +58,24 @@ const questions = [
     choices: ["Circle", "Square", "Triangle"],
   },
 ];
+
+const writeSVG = (fileName, data) => {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+};
+
+const generateSVG = async () => {
+  try {
+    const userInput = await inquirer.prompt(questions);
+    const finalSVG = generateLogo(userInput);
+    writeSVG("./output/logo.svg", finalSVG);
+    console.log("Logo generated. Please find your logo in the output folder.");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+generateSVG();
