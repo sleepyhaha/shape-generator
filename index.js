@@ -40,4 +40,15 @@ const questions = [
     message: "Please enter your logo text (no more than 3 characters plz)",
     name: "logotext",
   },
+  {
+    type: "input",
+    message: "Please enter the background colour",
+    name: "colour",
+  },
+  {
+    type: "list",
+    message: "Please choose a shape",
+    name: "shape",
+    choices: ["circle", "square", "triangle"],
+  },
 ];
